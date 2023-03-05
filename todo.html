@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="newdiv">
+    <h1>WORK TO-DOS</h1>
+    <p>enter text into the input feild to add items to your list</p>
+    <p>Click the item to mark it as complete</p>
+    <p>Click the "X" remove the item from your list </p>
+        <div id="flexx">
+        <input type="text" placeholder="New item..." id="ip"></form>
+        <button type="submit" onclick="addtolist()" >✔</button>
+        </div>
+        <div id="display">
+        <ul id="finallist">
+            
+        </ul>
+        </div>
+    </div>
+    <script>
+        // var a=1;
+        function addtolist()
+        {
+           var item= document.getElementById("ip");
+           const para = document.createElement("li");
+           const cross = document.createElement("button");
+           cross.setAttribute("type", "submit");
+           para.setAttribute("id", "listtype");
+           cross.innerText = "X";
+           para.innerText=item.value;
+           document.getElementById("finallist").appendChild(para);
+           document.getElementById("listtype").appendChild(cross);
+           const breakk = document.createElement("br");
+           document.getElementById("finallist").appendChild(breakk);
+            item.value="";
+            cross.onclick=function(){
+                    para.setAttribute("class", "boom");
+            }
+            para.setAttribute("id", "gone");
+        }
+    </script>
+</body>
+</html>
